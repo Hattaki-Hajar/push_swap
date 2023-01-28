@@ -4,22 +4,22 @@ BSOURCES = $(wildcard ./bonus/*.c)
 		
 CC		=	cc
 
-CFLAGS	=	 -Wall -Wextra -Werror 
+CFLAGS	=	 -g -Wall -Wextra -Werror -fsanitize=address
 
 NAME	=	push_swap
 BNAME	=	checker
-
+MK_FILE = Makefile
 LIBFT	=	./libft/libft.a
 
 all:	$(NAME)
 
-$(NAME):	$(SOURCES)
+$(NAME):	$(SOURCES) $(MK_FILE)
 		make -C libft
 		$(CC) $(CFLAGS) $(SOURCES) $(LIBFT)  -o $(NAME)
 
 bonus:	$(BNAME)
 
-$(BNAME):	$(BSOURCES)
+$(BNAME):	$(BSOURCES) $(MK_FILE)
 		make -C libft
 		$(CC) $(CFLAGS) $(BSOURCES) $(LIBFT)  -o $(BNAME)
 

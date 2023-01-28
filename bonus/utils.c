@@ -6,12 +6,11 @@
 /*   By: hhattaki <hhattaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 20:25:43 by hhattaki          #+#    #+#             */
-/*   Updated: 2023/01/27 23:19:32 by hhattaki         ###   ########.fr       */
+/*   Updated: 2023/01/28 02:20:36 by hhattaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"checker.h"
-#include<stdio.h>
 
 void	ft_error_bonus(void)
 {
@@ -24,7 +23,7 @@ void	ft_free_bonus(char **av)
 	int	i;
 
 	i = 0;
-	while (av[i])
+	while (av && av[i])
 	{
 		free(av[i]);
 		i++;

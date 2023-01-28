@@ -26,12 +26,12 @@ int	ft_atoi(const char *str)
 
 	sign = 1;
 	n = 0;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
+	while (str &&((*str >= 9 && *str <= 13) || *str == 32))
 		str++;
-	if (*str == '+' || *str == '-')
+	if (str && (*str == '+' || *str == '-'))
 		if (*str++ == '-')
 			sign *= -1;
-	while (*str >= '0' && *str <= '9')
+	while (str && (*str >= '0' && *str <= '9'))
 	{
 		n = n * 10 + *str++ - '0';
 		if (n > 9223372036854775807)

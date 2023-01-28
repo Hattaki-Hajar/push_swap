@@ -6,11 +6,28 @@
 /*   By: hhattaki <hhattaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 20:08:51 by hhattaki          #+#    #+#             */
-/*   Updated: 2023/01/26 15:34:48 by hhattaki         ###   ########.fr       */
+/*   Updated: 2023/01/28 01:59:22 by hhattaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	search(t_stack temp, int max)
+{
+	int	j;
+
+	j = 0;
+	while (temp.stack)
+	{
+		if (temp.stack->content == max)
+			break ;
+		j++;
+		temp.stack = temp.stack->next;
+	}
+	if (!temp.stack)
+		return (-1);
+	return (j);
+}
 
 void	find_nb(t_stack *a, t_stack *b, int nb)
 {

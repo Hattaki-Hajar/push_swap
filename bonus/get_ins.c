@@ -6,12 +6,11 @@
 /*   By: hhattaki <hhattaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 20:26:54 by hhattaki          #+#    #+#             */
-/*   Updated: 2023/01/28 01:36:49 by hhattaki         ###   ########.fr       */
+/*   Updated: 2023/01/28 02:18:38 by hhattaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"checker.h"
-#include<stdio.h>
 
 char	*get_inst(void)
 {
@@ -82,5 +81,6 @@ void	read_inst(t_stack *a, t_stack *b)
 	else
 		ft_putendl_fd("KO", 1);
 	ft_free_bonus(ins);
-	free(op);
+	if (op)
+		free(op);
 }

@@ -6,68 +6,62 @@
 /*   By: hhattaki <hhattaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 15:39:19 by hhattaki          #+#    #+#             */
-/*   Updated: 2023/01/26 15:36:06 by hhattaki         ###   ########.fr       */
+/*   Updated: 2023/01/28 01:59:12 by hhattaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	search(t_stack temp, int max)
+int	to_rb(t_stack *b, t_stack *a, int *arr, int len)
 {
-	int	j;
+	int	r;
 
-	j = 0;
-	while (temp.stack)
+	r = 0;
+	while (b->head->content != arr[len])
 	{
-		if (temp.stack->content == max)
-			break ;
-		j++;
-		temp.stack = temp.stack->next;
+		if (len > 0 && b->head->content == arr[len - 1])
+		{
+			push(b, a, 1);
+			r = 1;
+		}
+		if (b->head->content == arr[len])
+			return (r);
+		rotate_b(b);
 	}
-	if (!temp.stack)
-		return (-1);
-	return (j);
+	return (r);
+}
+
+int	to_rrb(t_stack *b, t_stack *a, int *arr, int len)
+{
+	int	r;
+
+	r = 0;
+	while (b->head->content != arr[len])
+	{
+		if (len > 0 && b->head->content == arr[len - 1])
+		{
+			push(b, a, 1);
+			r = 1;
+		}
+		if (b->head->content == arr[len])
+			return (r);
+		rev_rotate(b, 1);
+	}
+	return (r);
 }
 
 int	to_push(t_stack *b, t_stack *a, int *arr, int len)
 {
 	int		found;
 	int		r;
-	t_list	*temp;
 
 	found = search(*b, arr[len]);
 	if (found == -1)
 		return (-1);
-	temp = b->head;
-	r = 0;
 	if (found <= b->size / 2)
-	{
-		while (b->head->content != arr[len])
-		{
-			if (len > 0 && b->head->content == arr[len - 1])
-			{
-				push(b, a, 1);
-				r = 1;
-			}
-			if (b->head->content == arr[len])
-				break ;
-			rotate_b(b);
-		}
-	}
+		r = to_rb(b, a, arr, len);
 	else
-	{
-		while (b->head->content != arr[len])
-		{
-			if (len > 0 && b->head->content == arr[len - 1])
-			{
-				push(b, a, 1);
-				r = 1;
-			}
-			if (b->head->content == arr[len])
-				break ;
-			rev_rotate(b, 1);
-		}
-	}
+		r = to_rrb(b, a, arr, len);
 	push(b, a, 1);
 	if (r == 1)
 		swap(a, 0);
