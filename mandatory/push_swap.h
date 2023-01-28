@@ -6,11 +6,7 @@
 /*   By: hhattaki <hhattaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 17:06:31 by hhattaki          #+#    #+#             */
-<<<<<<< HEAD:mandatory/push_swap.h
-/*   Updated: 2023/01/27 23:04:05 by hhattaki         ###   ########.fr       */
-=======
-/*   Updated: 2023/01/26 20:24:31 by hhattaki         ###   ########.fr       */
->>>>>>> 61e9c62c0c2b6d39eec097bdc48c4ff4c010d4bb:push_swap.h
+/*   Updated: 2023/01/28 01:29:01 by hhattaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

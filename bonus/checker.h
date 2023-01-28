@@ -6,16 +6,16 @@
 /*   By: hhattaki <hhattaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 19:17:14 by hhattaki          #+#    #+#             */
-/*   Updated: 2023/01/27 21:59:31 by hhattaki         ###   ########.fr       */
+/*   Updated: 2023/01/28 01:36:17 by hhattaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_H
 # define CHECKER_H
 
-#include"../mandatory/push_swap.h"
-#include"../libft/libft.h"
-#include"../libft/get_next_line.h"
+# include"../mandatory/push_swap.h"
+# include"../libft/libft.h"
+# include"../libft/get_next_line.h"
 
 /*---------operations-------*/
 void	to_swap(t_stack *a);

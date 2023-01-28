@@ -6,7 +6,7 @@
 /*   By: hhattaki <hhattaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 20:26:54 by hhattaki          #+#    #+#             */
-/*   Updated: 2023/01/28 01:13:49 by hhattaki         ###   ########.fr       */
+/*   Updated: 2023/01/28 01:36:49 by hhattaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,18 @@ char	*get_inst(void)
 
 void	check_ins1(char	**ins, t_stack *a, t_stack *b, int i)
 {
-		if (!ft_strncmp(ins[i], "pa", ft_strlen(ins[i])))
-			to_push(b, a);
-		else if (!ft_strncmp(ins[i], "pb", ft_strlen(ins[i])))
-			to_push(a, b);
-		else if (!ft_strncmp(ins[i], "ss", ft_strlen(ins[i])))
-			to_ss(a, b);
-		else if (!ft_strncmp(ins[i], "rr", ft_strlen(ins[i])))
-			to_rr(a, b);
-		else if (!ft_strncmp(ins[i], "rrr", ft_strlen(ins[i])))
-			to_rrr(a, b);
-		else
-			ft_error_bonus();
+	if (!ft_strncmp(ins[i], "pa", ft_strlen(ins[i])))
+		to_push(b, a);
+	else if (!ft_strncmp(ins[i], "pb", ft_strlen(ins[i])))
+		to_push(a, b);
+	else if (!ft_strncmp(ins[i], "ss", ft_strlen(ins[i])))
+		to_ss(a, b);
+	else if (!ft_strncmp(ins[i], "rr", ft_strlen(ins[i])))
+		to_rr(a, b);
+	else if (!ft_strncmp(ins[i], "rrr", ft_strlen(ins[i])))
+		to_rrr(a, b);
+	else
+		ft_error_bonus();
 }
 
 void	check_ins2(char	**ins, t_stack *a, t_stack *b, int i)

@@ -6,7 +6,7 @@
 /*   By: hhattaki <hhattaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:46:49 by hhattaki          #+#    #+#             */
-/*   Updated: 2023/01/28 01:14:33 by hhattaki         ###   ########.fr       */
+/*   Updated: 2023/01/28 01:36:57 by hhattaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,4 @@ int	main(int ac, char **av)
 	a.size = 0;
 	get_arg_bonus(ac, av, &a);
 	read_inst(&a, &b);
-	// system("leaks checker");
 }

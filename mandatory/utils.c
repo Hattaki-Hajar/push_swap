@@ -6,11 +6,7 @@
 /*   By: hhattaki <hhattaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 16:58:41 by hhattaki          #+#    #+#             */
-<<<<<<< HEAD:mandatory/utils.c
-/*   Updated: 2023/01/27 22:02:08 by hhattaki         ###   ########.fr       */
-=======
-/*   Updated: 2023/01/26 20:23:49 by hhattaki         ###   ########.fr       */
->>>>>>> 61e9c62c0c2b6d39eec097bdc48c4ff4c010d4bb:utils.c
+/*   Updated: 2023/01/28 01:31:23 by hhattaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +73,24 @@ int	*ref_arr(t_stack *stack, t_num d)
 	}
 	sort_arr(arr, d);
 	return (arr);
+}
+
+int	is_sorted(t_stack *stack)
+{
+	t_list	*temp;
+	t_list	*iter;
+
+	iter = stack->head;
+	while (iter)
+	{
+		temp = iter->next;
+		while (temp)
+		{
+			if (iter->content > temp->content)
+				return (0);
+			temp = temp->next;
+		}
+		iter = iter->next;
+	}
+	return (1);
 }

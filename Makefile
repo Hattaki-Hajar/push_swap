@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 SOURCES = $(wildcard ./mandatory/*.c)
-=======
-SOURCES = $(wildcard *.c)
->>>>>>> 61e9c62c0c2b6d39eec097bdc48c4ff4c010d4bb
 
 BSOURCES = $(wildcard ./bonus/*.c)
 		
